@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# First-open setup. System-level prerequisites go here.
+# Node/npm come from the host image, so there is nothing to install once.
+set -euo pipefail
+
+echo "setup: using $(node -v) / npm $(npm -v)"
+echo "setup: no additional system dependencies required"

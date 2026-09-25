@@ -1,0 +1,9 @@
+# Keep targets within Angular 22 support so Vite/esbuild
+# does not inherit a parent browserslist (e.g. >0.2%).
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Edge major versions
+last 2 Safari major versions
+last 2 iOS major versions
+Firefox ESR
+not dead

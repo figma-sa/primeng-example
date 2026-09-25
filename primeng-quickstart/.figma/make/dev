@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Start the Angular dev server. Runs for the whole session; killed on close.
+set -euo pipefail
+
+cd "$(dirname "$0")/../.."
+
+# Load PORT (and friends) from the env file next to this script.
+set -a
+# shellcheck disable=SC1091
+. "$(dirname "$0")/env"
+set +a
+
+# Put an Angular-22-compatible Node on PATH (see select-node.sh).
+# shellcheck disable=SC1091
+. "$(dirname "$0")/select-node.sh"
+ensure_node
+echo "dev: using $(node -v)"
+
+exec npx ng serve --host 0.0.0.0 --port "${PORT:-3000}"
