@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Verify the dev server is reachable. Polls until it answers or times out.
+set -euo pipefail
+
+# shellcheck disable=SC1091
+. "$(dirname "$0")/env"
+PORT="${PORT:-3000}"
+URL="http://localhost:${PORT}"
+
+for i in $(seq 1 60); do
+  if curl -sfo /dev/null "$URL"; then
+    echo "verify: dev server is up at $URL"
+    exit 0
+  fi
+  sleep 2
+done
+
+echo "verify: dev server did not respond at $URL within timeout" >&2
+exit 1

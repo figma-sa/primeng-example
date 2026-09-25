@@ -1,0 +1,99 @@
+{
+  "pointAndEdit": {
+    "priorityPaths": {
+      "prefer": [
+        "src/app/app.component.ts",
+        "src/app/app.component.html",
+        "src/app/app.component.scss",
+        "src/app/components/**/*.ts",
+        "src/app/components/**/*.html",
+        "src/app/components/**/*.scss"
+      ],
+      "deprioritize": [
+        "src/app/service/**",
+        "src/app/app.config.ts",
+        "src/app/app.routes.ts",
+        "src/styles.scss"
+      ],
+      "exclude": [
+        "src/app/**/*.spec.ts",
+        "src/main.ts",
+        "src/index.html",
+        "public/**",
+        "dist/**",
+        "node_modules/**",
+        "**/*.figma.ts",
+        "**/*.figma.tsx",
+        "**/*.figma.js",
+        "**/*.figma.jsx",
+        "**/*.figma.template.*"
+      ]
+    },
+    "libraryPaths": {
+      "local": [],
+      "external": [
+        "node_modules/primeng/**",
+        "node_modules/@primeuix/**",
+        "node_modules/primeicons/**"
+      ]
+    },
+    "pathClassification": {
+      "classifier": "sonnet"
+    },
+    "exclusions": [
+      {
+        "glob": "src/app/**/*.spec.ts",
+        "reason": "Karma/Jasmine test files are not UI source anchors; they contain no renderable component implementations."
+      },
+      {
+        "glob": "src/main.ts",
+        "reason": "Bootstrap entry point only; contains no component template or renderable UI logic."
+      },
+      {
+        "glob": "src/index.html",
+        "reason": "Static HTML shell with no Angular component logic; not a point-and-edit target."
+      },
+      {
+        "glob": "public/**",
+        "reason": "Static assets (favicon, etc.) with no source code to anchor edits to."
+      },
+      {
+        "glob": "dist/**",
+        "reason": "Build output; never the authoritative source for UI edits."
+      },
+      {
+        "glob": "node_modules/**",
+        "reason": "Third-party installed packages; not editable application source."
+      },
+      {
+        "glob": "**/*.figma.ts",
+        "reason": "Figma mapping files must be excluded per classification rules."
+      },
+      {
+        "glob": "**/*.figma.tsx",
+        "reason": "Figma mapping files must be excluded per classification rules."
+      },
+      {
+        "glob": "**/*.figma.js",
+        "reason": "Figma mapping files must be excluded per classification rules."
+      },
+      {
+        "glob": "**/*.figma.jsx",
+        "reason": "Figma mapping files must be excluded per classification rules."
+      },
+      {
+        "glob": "**/*.figma.template.*",
+        "reason": "Figma mapping files must be excluded per classification rules."
+      }
+    ],
+    "generated": {
+      "schemaVersion": 2,
+      "source": "setup-agent.point-and-edit-path-classifier",
+      "prompt": "same-turn-setup-subagent-v5",
+      "model": "claude-sonnet-4-6",
+      "createdAt": "2026-09-24T00:00:00Z",
+      "confidence": 0.97,
+      "explanation": "Single-app Angular project with a flat, well-structured source tree where all UI components are co-located under src/app/components/, making classification straightforward with high confidence."
+    }
+  }
+}

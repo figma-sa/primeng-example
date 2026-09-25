@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Install project dependencies. Runs on every project open.
+set -euo pipefail
+
+cd "$(dirname "$0")/../.."
+
+# Put an Angular-22-compatible Node on PATH (see select-node.sh).
+# shellcheck disable=SC1091
+. "$(dirname "$0")/select-node.sh"
+ensure_node
+echo "install: using $(node -v)"
+
+if [ -f package-lock.json ]; then
+  npm ci
+else
+  npm install
+fi
